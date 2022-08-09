@@ -8,11 +8,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class SchedulingTasksApplication {
-	private static  final Logger log = LoggerFactory.getLogger(SchedulingTasksApplication.class);
+public class DBRun {
+	private static  final Logger log = LoggerFactory.getLogger(DBRun.class);
 
 	public static void main(String[] args) {
 		log.info("dbrun app is started=========");
-		SpringApplication.run(SchedulingTasksApplication.class);
+		SpringApplication.run(DBRun.class);
 	}
 }
