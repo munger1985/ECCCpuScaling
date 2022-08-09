@@ -1,0 +1,304 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    config.linkerd.io/default-inbound-policy: cluster-unauthenticated
+    kubectl.kubernetes.io/restartedAt: "2022-04-13T23:40:09Z"
+    linkerd.io/created-by: linkerd/proxy-injector edge-22.3.5
+    linkerd.io/inject: enabled
+    linkerd.io/proxy-version: edge-22.3.5
+  creationTimestamp: "2022-04-13T23:40:09Z"
+  generateName: books-5df9fb6659-
+  labels:
+    app: books
+    linkerd.io/control-plane-ns: linkerd
+    linkerd.io/proxy-deployment: books
+    linkerd.io/workload-ns: booksapp
+    pod-template-hash: 5df9fb6659
+    project: booksapp
+  name: books-5df9fb6659-m6kh8
+  namespace: booksapp
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: books-5df9fb6659
+    uid: 24f29e0b-f97a-4144-be9d-dff61e85a9c1
+  resourceVersion: "6137763"
+  uid: 470dfb62-9321-4346-b84c-83f5e570bdbd
+spec:
+  containers:
+  - env:
+    - name: _pod_name
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: _pod_ns
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.namespace
+    - name: _pod_nodeName
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.nodeName
+    - name: LINKERD2_PROXY_LOG
+      value: warn,linkerd=info
+    - name: LINKERD2_PROXY_LOG_FORMAT
+      value: plain
+    - name: LINKERD2_PROXY_DESTINATION_SVC_ADDR
+      value: linkerd-dst-headless.linkerd.svc.cluster.local.:8086
+    - name: LINKERD2_PROXY_DESTINATION_PROFILE_NETWORKS
+      value: 10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16
+    - name: LINKERD2_PROXY_POLICY_SVC_ADDR
+      value: linkerd-policy.linkerd.svc.cluster.local.:8090
+    - name: LINKERD2_PROXY_POLICY_WORKLOAD
+      value: $(_pod_ns):$(_pod_name)
+    - name: LINKERD2_PROXY_INBOUND_DEFAULT_POLICY
+      value: cluster-unauthenticated
+    - name: LINKERD2_PROXY_POLICY_CLUSTER_NETWORKS
+      value: 10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16
+    - name: LINKERD2_PROXY_INBOUND_CONNECT_TIMEOUT
+      value: 100ms
+    - name: LINKERD2_PROXY_OUTBOUND_CONNECT_TIMEOUT
+      value: 1000ms
+    - name: LINKERD2_PROXY_CONTROL_LISTEN_ADDR
+      value: 0.0.0.0:4190
+    - name: LINKERD2_PROXY_ADMIN_LISTEN_ADDR
+      value: 0.0.0.0:4191
+    - name: LINKERD2_PROXY_OUTBOUND_LISTEN_ADDR
+      value: 127.0.0.1:4140
+    - name: LINKERD2_PROXY_INBOUND_LISTEN_ADDR
+      value: 0.0.0.0:4143
+    - name: LINKERD2_PROXY_INBOUND_IPS
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: status.podIPs
+    - name: LINKERD2_PROXY_INBOUND_PORTS
+      value: "7002"
+    - name: LINKERD2_PROXY_DESTINATION_PROFILE_SUFFIXES
+      value: svc.cluster.local.
+    - name: LINKERD2_PROXY_INBOUND_ACCEPT_KEEPALIVE
+      value: 10000ms
+    - name: LINKERD2_PROXY_OUTBOUND_CONNECT_KEEPALIVE
+      value: 10000ms
+    - name: LINKERD2_PROXY_INBOUND_PORTS_DISABLE_PROTOCOL_DETECTION
+      value: 25,587,3306,4444,5432,6379,9300,11211
+    - name: LINKERD2_PROXY_DESTINATION_CONTEXT
+      value: |
+        {"ns":"$(_pod_ns)", "nodeName":"$(_pod_nodeName)"}
+    - name: _pod_sa
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.serviceAccountName
+    - name: LINKERD2_PROXY_IDENTITY_DIR
+      value: /var/run/linkerd/identity/end-entity
+    - name: LINKERD2_PROXY_IDENTITY_TRUST_ANCHORS
+      value: |
+        -----BEGIN CERTIFICATE-----
+        MIIBhzCCAS6gAwIBAgIBATAKBggqhkjOPQQDAjAcMRowGAYDVQQDExFpZGVudGl0
+        eS5saW5rZXJkLjAeFw0yMjA0MTMwOTAxNTVaFw0yMzA0MTMwOTAyMTVaMBwxGjAY
+        BgNVBAMTEWlkZW50aXR5LmxpbmtlcmQuMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcD
+        QgAEOAiCtzRHbdrKhi800vjVHYRB/isyyAOLSgdMltpfDaLPerXhzdBs7nlfkJHA
+        8ekcuAd0ewelJmI0IjG90aUZ0qNhMF8wDgYDVR0PAQH/BAQDAgEGMB0GA1UdJQQW
+        MBQGCCsGAQUFBwMBBggrBgEFBQcDAjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+        BBT3Gb4HBAMD8vcn3VQ8EHAHZwT5bzAKBggqhkjOPQQDAgNHADBEAiBFF9BpZ4Wz
+        QhZLPp+7OkuSIwh6Dm7B+OYDcH4763F5sgIgJWP1BefWDOzmFhPAV0uff601FK2P
+        I+Xj28j3HBb98iI=
+        -----END CERTIFICATE-----
+    - name: LINKERD2_PROXY_IDENTITY_TOKEN_FILE
+      value: /var/run/secrets/tokens/linkerd-identity-token
+    - name: LINKERD2_PROXY_IDENTITY_SVC_ADDR
+      value: linkerd-identity-headless.linkerd.svc.cluster.local.:8080
+    - name: LINKERD2_PROXY_IDENTITY_LOCAL_NAME
+      value: $(_pod_sa).$(_pod_ns).serviceaccount.identity.linkerd.cluster.local
+    - name: LINKERD2_PROXY_IDENTITY_SVC_NAME
+      value: linkerd-identity.linkerd.serviceaccount.identity.linkerd.cluster.local
+    - name: LINKERD2_PROXY_DESTINATION_SVC_NAME
+      value: linkerd-destination.linkerd.serviceaccount.identity.linkerd.cluster.local
+    - name: LINKERD2_PROXY_POLICY_SVC_NAME
+      value: linkerd-destination.linkerd.serviceaccount.identity.linkerd.cluster.local
+    image: cr.l5d.io/linkerd/proxy:edge-22.3.5
+    imagePullPolicy: IfNotPresent
+    lifecycle:
+      postStart:
+        exec:
+          command:
+          - /usr/lib/linkerd/linkerd-await
+          - --timeout=2m
+    livenessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /live
+        port: 4191
+        scheme: HTTP
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    name: linkerd-proxy
+    ports:
+    - containerPort: 4143
+      name: linkerd-proxy
+      protocol: TCP
+    - containerPort: 4191
+      name: linkerd-admin
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /ready
+        port: 4191
+        scheme: HTTP
+      initialDelaySeconds: 2
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources: {}
+    securityContext:
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
+      runAsUser: 2102
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: FallbackToLogsOnError
+    volumeMounts:
+    - mountPath: /var/run/linkerd/identity/end-entity
+      name: linkerd-identity-end-entity
+    - mountPath: /var/run/secrets/tokens
+      name: linkerd-identity-token
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-qv8v6
+      readOnly: true
+  - args:
+    - prod:books
+    env:
+    - name: DATABASE_URL
+      value: sqlite3:db/db.sqlite3
+    - name: AUTHORS_SITE
+      value: http://authors:7001
+    image: buoyantio/booksapp:v0.0.5
+    imagePullPolicy: IfNotPresent
+    name: service
+    ports:
+    - containerPort: 7002
+      name: service
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /ping
+        port: 7002
+        scheme: HTTP
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-qv8v6
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: 10.0.32.93
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-qv8v6
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+  - emptyDir:
+      medium: Memory
+    name: linkerd-identity-end-entity
+  - name: linkerd-identity-token
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          audience: identity.l5d.io
+          expirationSeconds: 86400
+          path: linkerd-identity-token
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2022-04-13T23:40:10Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2022-04-13T23:40:13Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2022-04-13T23:40:13Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2022-04-13T23:40:10Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: cri-o://bf3bfe7b9fbb42d824b995c73a0baf37671376ea834b43441208f41746062b0d
+    image: cr.l5d.io/linkerd/proxy:edge-22.3.5
+    imageID: cr.l5d.io/linkerd/proxy@sha256:25c9a1385a7bc813de81753687d3bda63dcb63b757b10d808c15e01bfebebfda
+    lastState: {}
+    name: linkerd-proxy
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2022-04-13T23:40:11Z"
+  - containerID: cri-o://677f366a924a7733247d7f61fbefbbace31c72f0a45cedcf4e87e761e08f8998
+    image: docker.io/buoyantio/booksapp:v0.0.5
+    imageID: docker.io/buoyantio/booksapp@sha256:83cef20f578b08b1e9cf8dcdfe1d9ec6b92f57b489fa365bf09e49b1069480ff
+    lastState: {}
+    name: service
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2022-04-13T23:40:11Z"
+  hostIP: 10.0.32.93
+  phase: Running
+  podIP: 10.244.0.59
+  podIPs:
+  - ip: 10.244.0.59
+  qosClass: BestEffort
+  startTime: "2022-04-13T23:40:10Z"

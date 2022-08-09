@@ -1,0 +1,15 @@
+2022-08-01 14:31:41 -Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 76 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
+2022-08-01 14:31:41 -No active profile set, falling back to default profiles: default
+2022-08-01 14:31:42 -Initializing ProtocolHandler ["http-nio-8080"]
+2022-08-01 14:31:42 -Starting service [Tomcat]
+2022-08-01 14:31:42 -Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-08-01 14:31:42 -Initializing Spring embedded WebApplicationContext
+2022-08-01 14:31:43 -Starting ProtocolHandler ["http-nio-8080"]
+2022-08-01 14:31:43 -Started SchedulingTasksApplication in 2.698 seconds (JVM running for 5.455)
+2022-08-01 14:31:51 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 14:31:52 -node1 can not get metric
+2022-08-01 14:31:52 -13.1
+2022-08-01 14:31:52 -node1 ld_5 0.0
+2022-08-01 14:31:52 -node2 ld_5 13.1
+2022-08-01 14:31:52 -node1 cpu usage 0.0
+2022-08-01 14:31:52 -node2 cpu usage 1.1

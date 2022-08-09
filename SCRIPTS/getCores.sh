@@ -1,0 +1,1 @@
+lscpu | awk '/^CPU\(s\)/ { print $2/2 }'

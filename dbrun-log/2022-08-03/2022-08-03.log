@@ -1,0 +1,136 @@
+2022-08-03 06:31:19 -  dbrun app is started=========
+2022-08-03 06:31:20 -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 32040 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
+2022-08-03 06:31:20 -  No active profile set, falling back to default profiles: default
+2022-08-03 06:31:21 -  Initializing ProtocolHandler ["http-nio-8080"]
+2022-08-03 06:31:21 -  Starting service [Tomcat]
+2022-08-03 06:31:21 -  Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-08-03 06:31:21 -  Initializing Spring embedded WebApplicationContext
+2022-08-03 06:31:22 -  Starting ProtocolHandler ["http-nio-8080"]
+2022-08-03 06:31:22 -  Started SchedulingTasksApplication in 2.521 seconds (JVM running for 3.185)
+2022-08-03 06:31:32 -  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-03 06:31:32 -  ===> got one metric from node 2
+2022-08-03 06:31:32 -  ~~~~~~~~~~~~~~ start one computation ~~~~~~~~~~~~~~
+2022-08-03 06:31:32 -  threshold top == 70.0 %
+2022-08-03 06:31:32 -  threshold buttom == 44.0 %
+2022-08-03 06:31:32 -  node1 can not get metric
+2022-08-03 06:31:32 -  node1 ld_5 0.0
+2022-08-03 06:31:32 -  node1 ld_15 0.0
+2022-08-03 06:31:32 -  node2 ld_5 13.1
+2022-08-03 06:31:32 -  node2 ld_15 12.1
+2022-08-03 06:31:32 -  node1 cpu usage 0.0 %
+2022-08-03 06:31:32 -  node2 cpu usage 1.1 %
+2022-08-03 06:31:32 -  current: cores 22 
+2022-08-03 06:31:32 -  current: cpu usages 1.1 %
+2022-08-03 06:37:44 -  dbrun app is started=========
+2022-08-03 06:37:44 -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 29240 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
+2022-08-03 06:37:44 -  No active profile set, falling back to default profiles: default
+2022-08-03 06:37:45 -  Initializing ProtocolHandler ["http-nio-8080"]
+2022-08-03 06:37:45 -  Starting service [Tomcat]
+2022-08-03 06:37:45 -  Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-08-03 06:37:45 -  Initializing Spring embedded WebApplicationContext
+2022-08-03 06:37:46 -  Starting ProtocolHandler ["http-nio-8080"]
+2022-08-03 06:37:46 -  Started SchedulingTasksApplication in 1.921 seconds (JVM running for 2.413)
+2022-08-03 06:37:52 -  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-03 06:37:52 -  ===> got one metric from node 2
+2022-08-03 06:37:52 -  ~~~~~~~~~~~~~~ start one computation ~~~~~~~~~~~~~~
+2022-08-03 06:37:52 -  threshold top == 70.0 %
+2022-08-03 06:37:52 -  threshold buttom == 44.0 %
+2022-08-03 06:37:52 -  node1 can not get metric at the moment
+2022-08-03 06:37:52 -  node1 ld_1 0.0
+2022-08-03 06:37:52 -  node1 ld_5 0.0
+2022-08-03 06:37:52 -  node1 ld_15 0.0
+2022-08-03 06:37:52 -  node1 cpu usage 0.0 %
+2022-08-03 06:37:52 -  *********************************
+2022-08-03 06:37:52 -  node2 ld_1 0.0
+2022-08-03 06:37:52 -  node2 ld_5 13.1
+2022-08-03 06:37:52 -  node2 ld_15 12.1
+2022-08-03 06:37:52 -  node2 cpu usage 1.1 %
+2022-08-03 06:37:52 -  *********************************
+2022-08-03 06:37:52 -  current: cores 22 
+2022-08-03 06:37:52 -  current: cpu usages 1.1 %
+2022-08-03 06:44:24 -  dbrun app is started=========
+2022-08-03 06:44:25 -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 17156 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
+2022-08-03 06:44:25 -  No active profile set, falling back to default profiles: default
+2022-08-03 06:44:26 -  Initializing ProtocolHandler ["http-nio-8080"]
+2022-08-03 06:44:26 -  Starting service [Tomcat]
+2022-08-03 06:44:26 -  Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-08-03 06:44:26 -  Initializing Spring embedded WebApplicationContext
+2022-08-03 06:44:26 -  Starting ProtocolHandler ["http-nio-8080"]
+2022-08-03 06:44:26 -  Started SchedulingTasksApplication in 1.894 seconds (JVM running for 2.376)
+2022-08-03 06:44:34 -  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-03 06:44:34 -  ===> got one metric from node 2
+2022-08-03 06:44:34 -  ~~~~~~~~~~~~~~ start one computation ~~~~~~~~~~~~~~
+2022-08-03 06:44:34 -  threshold top == 70.0 %
+2022-08-03 06:44:34 -  threshold buttom == 44.0 %
+2022-08-03 06:44:34 -  node1 can not get metric at the moment
+2022-08-03 06:44:34 -  node1 ld_1 0.0
+2022-08-03 06:44:34 -  node1 ld_5 0.0
+2022-08-03 06:44:34 -  node1 ld_15 0.0
+2022-08-03 06:44:34 -  node1 cpu usage 0.0 %
+2022-08-03 06:44:34 -  *********************************
+2022-08-03 06:44:34 -  node2 ld_1 0.0
+2022-08-03 06:44:34 -  node2 ld_5 13.1
+2022-08-03 06:44:34 -  node2 ld_15 12.1
+2022-08-03 06:44:34 -  node2 cpu usage 1.1 %
+2022-08-03 06:44:34 -  *********************************
+2022-08-03 06:44:34 -  current: cores 22 
+2022-08-03 06:44:34 -  current: effective cpu usage 1.1 %
+2022-08-03 06:44:59 -  ===> got one metric from node 1
+2022-08-03 06:44:59 -  ~~~~~~~~~~~~~~ start one computation ~~~~~~~~~~~~~~
+2022-08-03 06:44:59 -  threshold top == 70.0 %
+2022-08-03 06:44:59 -  threshold buttom == 44.0 %
+2022-08-03 06:44:59 -  node1 ld_1 21.1
+2022-08-03 06:44:59 -  node1 ld_5 13.1
+2022-08-03 06:44:59 -  node1 ld_15 12.1
+2022-08-03 06:44:59 -  node1 cpu usage 1.1 %
+2022-08-03 06:44:59 -  *********************************
+2022-08-03 06:44:59 -  node2 ld_1 21.1
+2022-08-03 06:44:59 -  node2 ld_5 13.1
+2022-08-03 06:44:59 -  node2 ld_15 12.1
+2022-08-03 06:44:59 -  node2 cpu usage 1.1 %
+2022-08-03 06:44:59 -  *********************************
+2022-08-03 06:44:59 -  current: cores 22 
+2022-08-03 06:44:59 -  current: effective cpu usage 1.1 %
+2022-08-03 07:01:17 -  dbrun app is started=========
+2022-08-03 07:01:17 -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 14916 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
+2022-08-03 07:01:17 -  No active profile set, falling back to default profiles: default
+2022-08-03 07:01:18 -  Initializing ProtocolHandler ["http-nio-8080"]
+2022-08-03 07:01:18 -  Starting service [Tomcat]
+2022-08-03 07:01:18 -  Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-08-03 07:01:18 -  Initializing Spring embedded WebApplicationContext
+2022-08-03 07:01:19 -  Starting ProtocolHandler ["http-nio-8080"]
+2022-08-03 07:01:19 -  Started SchedulingTasksApplication in 1.977 seconds (JVM running for 2.449)
+2022-08-03 07:01:20 -  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-03 07:01:20 -  ===> got one metric from node 1
+2022-08-03 07:01:20 -  ~~~~~~~~~~~~~~ start one computation ~~~~~~~~~~~~~~
+2022-08-03 07:01:20 -  threshold top == 70.0 %
+2022-08-03 07:01:20 -  threshold buttom == 44.0 %
+2022-08-03 07:01:20 -  node2 can not get metric at the moment
+2022-08-03 07:01:20 -  node1 ld_1 21.1
+2022-08-03 07:01:20 -  node1 ld_5 13.1
+2022-08-03 07:01:20 -  node1 ld_15 12.1
+2022-08-03 07:01:20 -  node1 cpu usage 1.1 %
+2022-08-03 07:01:20 -  *********************************
+2022-08-03 07:01:20 -  node2 ld_1 21.1
+2022-08-03 07:01:20 -  node2 ld_5 0.0
+2022-08-03 07:01:20 -  node2 ld_15 0.0
+2022-08-03 07:01:20 -  node2 cpu usage 0.0 %
+2022-08-03 07:01:20 -  *********************************
+2022-08-03 07:01:20 -  current: cores 22 
+2022-08-03 07:01:20 -  current: effective cpu usage 1.1 %
+2022-08-03 07:01:22 -  ===> got one metric from node 2
+2022-08-03 07:01:22 -  ~~~~~~~~~~~~~~ start one computation ~~~~~~~~~~~~~~
+2022-08-03 07:01:22 -  threshold top == 70.0 %
+2022-08-03 07:01:22 -  threshold buttom == 44.0 %
+2022-08-03 07:01:22 -  node1 ld_1 21.1
+2022-08-03 07:01:22 -  node1 ld_5 13.1
+2022-08-03 07:01:22 -  node1 ld_15 12.1
+2022-08-03 07:01:22 -  node1 cpu usage 1.1 %
+2022-08-03 07:01:22 -  *********************************
+2022-08-03 07:01:22 -  node2 ld_1 21.1
+2022-08-03 07:01:22 -  node2 ld_5 13.1
+2022-08-03 07:01:22 -  node2 ld_15 12.1
+2022-08-03 07:01:22 -  node2 cpu usage 1.1 %
+2022-08-03 07:01:22 -  *********************************
+2022-08-03 07:01:22 -  current: cores 22 
+2022-08-03 07:01:22 -  current: effective cpu usage 1.1 %
