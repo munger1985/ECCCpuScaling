@@ -4,4 +4,7 @@ import java.util.HashMap;
 
 public class Constant {
     static HashMap<String,CpuMetricModel> metricModelHashMap = new HashMap<>();
+  final  static   Double budget=100000.0;
+
+
 }

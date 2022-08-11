@@ -11,6 +11,44 @@ class CpuMetricModel {
     String ld_15;
     String cpuUsage;
     String cores;
+    String clusterId;
+    String qweight;
+
+    String mincore;
+
+    String maxcore;
+
+    public String getQweight() {
+        return qweight;
+    }
+
+    public void setQweight(String qweight) {
+        this.qweight = qweight;
+    }
+
+    public String getMincore() {
+        return mincore;
+    }
+
+    public void setMincore(String mincore) {
+        this.mincore = mincore;
+    }
+
+    public String getMaxcore() {
+        return maxcore;
+    }
+
+    public void setMaxcore(String maxcore) {
+        this.maxcore = maxcore;
+    }
+
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
 
     public String getCores() {
         return cores;

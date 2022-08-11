@@ -1,1 +1,1 @@
-oci db vm-cluster update --vm-cluster-id ocid1.vmcluster.oc1.ap-seoul-1.anuwgljroeyi7vyakhn362iodd75pdaf7ip6glqybdz4mdyhfkucru5ujavq  --cpu-core-count $1
+oci db vm-cluster update --vm-cluster-id $1 --cpu-core-count $2
