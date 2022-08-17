@@ -1,4 +1,4 @@
-package com.example.schedulingtasks;
+package jingsong.oracle.smart;
 
 import io.reactivex.rxjava3.subjects.PublishSubject;
 import org.slf4j.Logger;
@@ -117,7 +117,7 @@ public class ScaleRule {
      */
 
     public void compute(CpuMetricModel cpuMetricModel) {
-        log.info("===> ===> start one computation ===> ===> ===>");
+        log.info("<=== <=== <=== start computation ===> ===> ===>");
 
         log.info("threshold top == {} %", upTrigger);
         log.info("threshold buttom == {} %", downTrigger);
@@ -125,14 +125,7 @@ public class ScaleRule {
 
 //        CpuMetricModel cpuMetricModel1 = metricModelHashMap.get("1");
 //        CpuMetricModel cpuMetricModel2 = metricModelHashMap.get("2");
-        log.info("<============= node {} =============>", cpuMetricModel.getVmId());
-        log.info("node   ld_1 {}", cpuMetricModel.getLd_1());
-        log.info("node  ld_5 {}", cpuMetricModel.getLd_5());
-        log.info("node  ld_15 {}", cpuMetricModel.getLd_15());
-        log.info("node  cpu usage {} %", cpuMetricModel.getCpuUsage());
-        log.info("getMincore  {}  ", cpuMetricModel.getMincore());
-        log.info("getMaxcore {}  ", cpuMetricModel.getMaxcore());
-        log.info("getQweight {}  ", cpuMetricModel.getQweight());
+
         int minCores = Integer.parseInt(cpuMetricModel.getMincore());
         int maxCores = Integer.parseInt(cpuMetricModel.getMaxcore());
         double q_weight = Double.parseDouble(cpuMetricModel.getQweight());
@@ -199,9 +192,16 @@ public class ScaleRule {
             }
         }
 
+        clearClusterData(cpuMetricModel);
+
 
     }
 
+    private void clearClusterData(CpuMetricModel cpuMetricModel) {
+        Constant.metricModelHashMap.remove(cpuMetricModel.getClusterId()+"=1");
+        Constant.metricModelHashMap.remove(cpuMetricModel.getClusterId()+"=2");
+
+    }
 //    /**
 //     * @deprecated
 //     */

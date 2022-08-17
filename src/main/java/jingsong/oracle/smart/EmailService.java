@@ -1,4 +1,4 @@
-package com.example.schedulingtasks;
+package jingsong.oracle.smart;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

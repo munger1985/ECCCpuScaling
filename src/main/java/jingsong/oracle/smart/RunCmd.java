@@ -1,4 +1,4 @@
-package com.example.schedulingtasks;
+package jingsong.oracle.smart;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

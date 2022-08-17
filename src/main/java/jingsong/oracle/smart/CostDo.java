@@ -1,4 +1,4 @@
-package com.example.schedulingtasks;
+package jingsong.oracle.smart;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

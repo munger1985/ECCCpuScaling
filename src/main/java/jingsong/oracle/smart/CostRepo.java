@@ -1,4 +1,4 @@
-package com.example.schedulingtasks;
+package jingsong.oracle.smart;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
