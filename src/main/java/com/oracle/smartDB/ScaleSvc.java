@@ -1,4 +1,4 @@
-package jingsong.oracle.smart;
+package com.oracle.smartDB;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,6 +39,7 @@ public class ScaleSvc {
     }
 
     public void scaleCpu(String ocid_targetCores) {
+        log.info("enter scale!");
         String[] strarr = ocid_targetCores.split("=");
         String ocid=strarr[0];
         String targetCores = strarr[1];

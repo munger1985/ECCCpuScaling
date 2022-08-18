@@ -1,4 +1,4 @@
-package jingsong.oracle.smart;
+package com.oracle.smartDB;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

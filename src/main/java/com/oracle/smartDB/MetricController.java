@@ -1,4 +1,4 @@
-package jingsong.oracle.smart;
+package com.oracle.smartDB;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,9 +35,11 @@ public class MetricController {
     @Autowired
     CostRepo costRepo;
 
-    private synchronized void addCost(String ocid_vmid) {
+    private synchronized void addCost(  BigDecimal core) {
         CostDo costDo = null;
-
+//        log.info("debug {}",ocid_vmid);
+//        CpuMetricModel ttt = Constant.metricModelHashMap.get(ocid_vmid);
+//        log.info("tt: {}" ,ttt);
         try {
             costDo = costRepo.findById("all").get();
 
@@ -49,7 +51,6 @@ public class MetricController {
 
         String costV = costDo.getCostValue();
         BigDecimal all = new BigDecimal(costV);
-        BigDecimal core = new BigDecimal(Constant.metricModelHashMap.get(ocid_vmid).getCores());
         BigDecimal minutecost = core.multiply(new BigDecimal(price));
         all = all.add(minutecost);
         costDo.setCostValue(all.toString());
@@ -110,9 +111,11 @@ public class MetricController {
     @RequestMapping(value = "/collect", method = RequestMethod.POST)
     public ResponseEntity<Object> collect(@RequestBody CpuMetricModel cpuMetricModel) {
         log.info("====> got one metric from node {} of cluster", cpuMetricModel.getVmId());
-        Constant.metricModelHashMap.put(cpuMetricModel.getClusterId() + "=" + cpuMetricModel.getVmId(), cpuMetricModel);
+        String ocid_vmid =cpuMetricModel.getClusterId() + "=" + cpuMetricModel.getVmId();
+        Constant.metricModelHashMap.put(ocid_vmid, cpuMetricModel);
+        BigDecimal core = new BigDecimal(cpuMetricModel.getCores());
+        addCost( core);
         new Thread(() -> dataFilter.setNodeMetric(cpuMetricModel)).start();
-        addCost(cpuMetricModel.getClusterId() + "=" + cpuMetricModel.getVmId());
         return new ResponseEntity<>("Metric is posted successfully", HttpStatus.CREATED);
     }
 

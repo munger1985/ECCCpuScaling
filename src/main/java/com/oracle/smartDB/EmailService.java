@@ -1,4 +1,4 @@
-package jingsong.oracle.smart;
+package com.oracle.smartDB;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

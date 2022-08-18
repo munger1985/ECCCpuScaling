@@ -1,4 +1,4 @@
-package jingsong.oracle.smart;
+package com.oracle.smartDB;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

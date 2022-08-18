@@ -1,4 +1,4 @@
-package jingsong.oracle.smart;
+package com.oracle.smartDB;
 
 import io.reactivex.rxjava3.subjects.PublishSubject;
 import org.slf4j.Logger;
@@ -40,7 +40,10 @@ public class ScaleRule {
     public void setup() {
         //window(coolDown, TimeUnit.MINUTES)
         publishSubject
-                .subscribe(x -> scaleSvc.scaleCpu(x), err -> log.error(err.toString()));
+                .subscribe(x -> scaleSvc.scaleCpu(x), err ->
+                        {   log.error("rx received Error!");
+                            err.printStackTrace();
+                        });
     }
 
     Integer capCores(Integer cores, Integer minCores, Integer maxCores) {

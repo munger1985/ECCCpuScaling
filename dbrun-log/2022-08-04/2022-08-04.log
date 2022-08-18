@@ -242,7 +242,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-08-04 21:06:24 INFO  c.example.schedulingtasks.ScaleRule -  current: cores 4 
 2022-08-04 21:06:24 INFO  c.example.schedulingtasks.ScaleRule -  current: effective cpu usage 78.0 %
 2022-08-04 21:06:24 INFO  c.example.schedulingtasks.ScaleRule -  will change to cores ==>  4
-2022-08-04 21:06:24 INFO  com.example.schedulingtasks.ScaleSvc -  No need to run oci cli, exit!
+2022-08-04 21:06:24 INFO  ScaleSvc -  No need to run oci cli, exit!
 2022-08-04 21:07:46 INFO  c.e.s.SchedulingTasksApplication -  dbrun app is started=========
 2022-08-04 21:07:46 INFO  c.e.s.SchedulingTasksApplication -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 15976 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
 2022-08-04 21:07:46 INFO  c.e.s.SchedulingTasksApplication -  No active profile set, falling back to default profiles: default
@@ -271,7 +271,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-08-04 21:07:57 INFO  c.example.schedulingtasks.ScaleRule -  current: cores 4 
 2022-08-04 21:07:57 INFO  c.example.schedulingtasks.ScaleRule -  current: effective cpu usage 78.0 %
 2022-08-04 21:07:57 INFO  c.example.schedulingtasks.ScaleRule -  will change to cores ==>  4
-2022-08-04 21:07:57 INFO  com.example.schedulingtasks.ScaleSvc -  No need to run oci cli, exit!
+2022-08-04 21:07:57 INFO  ScaleSvc -  No need to run oci cli, exit!
 2022-08-04 21:08:58 INFO  c.e.s.SchedulingTasksApplication -  dbrun app is started=========
 2022-08-04 21:08:59 INFO  c.e.s.SchedulingTasksApplication -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 34024 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
 2022-08-04 21:08:59 INFO  c.e.s.SchedulingTasksApplication -  No active profile set, falling back to default profiles: default
@@ -300,7 +300,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-08-04 21:09:08 INFO  c.example.schedulingtasks.ScaleRule -  current: cores 4 
 2022-08-04 21:09:08 INFO  c.example.schedulingtasks.ScaleRule -  current: effective cpu usage 78.0 %
 2022-08-04 21:09:08 INFO  c.example.schedulingtasks.ScaleRule -  will change to cores ==>  4
-2022-08-04 21:09:08 INFO  com.example.schedulingtasks.ScaleSvc -  No need to run oci cli, exit!
+2022-08-04 21:09:08 INFO  ScaleSvc -  No need to run oci cli, exit!
 2022-08-04 21:11:29 INFO  c.e.s.SchedulingTasksApplication -  dbrun app is started=========
 2022-08-04 21:11:29 INFO  c.e.s.SchedulingTasksApplication -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 29836 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
 2022-08-04 21:11:29 INFO  c.e.s.SchedulingTasksApplication -  No active profile set, falling back to default profiles: default
@@ -338,7 +338,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-08-04 21:11:51 INFO  c.example.schedulingtasks.ScaleRule -  current: cores 4 
 2022-08-04 21:11:51 INFO  c.example.schedulingtasks.ScaleRule -  current: effective cpu usage 78.0 %
 2022-08-04 21:11:51 INFO  c.example.schedulingtasks.ScaleRule -  will change to cores ==>  4
-2022-08-04 21:11:51 INFO  com.example.schedulingtasks.ScaleSvc -  No need to run oci cli, exit!
+2022-08-04 21:11:51 INFO  ScaleSvc -  No need to run oci cli, exit!
 2022-08-04 21:15:00 INFO  c.e.s.SchedulingTasksApplication -  dbrun app is started=========
 2022-08-04 21:15:01 INFO  c.e.s.SchedulingTasksApplication -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 432 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
 2022-08-04 21:15:01 INFO  c.e.s.SchedulingTasksApplication -  No active profile set, falling back to default profiles: default
@@ -369,7 +369,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-08-04 21:15:04 INFO  c.example.schedulingtasks.ScaleRule -  current: cores 4 
 2022-08-04 21:15:04 INFO  c.example.schedulingtasks.ScaleRule -  current: effective cpu usage 78.0 %
 2022-08-04 21:15:04 INFO  c.example.schedulingtasks.ScaleRule -  will change to cores ===>  4
-2022-08-04 21:15:04 INFO  com.example.schedulingtasks.ScaleSvc -  No need to run oci cli, exit!
+2022-08-04 21:15:04 INFO  ScaleSvc -  No need to run oci cli, exit!
 2022-08-04 21:17:11 INFO  c.e.s.SchedulingTasksApplication -  dbrun app is started=========
 2022-08-04 21:17:12 INFO  c.e.s.SchedulingTasksApplication -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 4672 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
 2022-08-04 21:17:12 INFO  c.e.s.SchedulingTasksApplication -  No active profile set, falling back to default profiles: default
@@ -400,7 +400,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-08-04 21:17:16 INFO  c.example.schedulingtasks.ScaleRule -  current: cores 4 
 2022-08-04 21:17:16 INFO  c.example.schedulingtasks.ScaleRule -  current: effective cpu usage 78.0 %
 2022-08-04 21:17:16 INFO  c.example.schedulingtasks.ScaleRule -  will change to cores ===> 4
-2022-08-04 21:17:16 INFO  com.example.schedulingtasks.ScaleSvc -  No need to run oci cli, exit!
+2022-08-04 21:17:16 INFO  ScaleSvc -  No need to run oci cli, exit!
 2022-08-04 21:18:27 INFO  c.e.s.SchedulingTasksApplication -  dbrun app is started=========
 2022-08-04 21:18:27 INFO  c.e.s.SchedulingTasksApplication -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 29236 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
 2022-08-04 21:18:27 INFO  c.e.s.SchedulingTasksApplication -  No active profile set, falling back to default profiles: default
@@ -431,7 +431,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-08-04 21:18:32 INFO  c.example.schedulingtasks.ScaleRule -  current: cores 4 
 2022-08-04 21:18:32 INFO  c.example.schedulingtasks.ScaleRule -  current: effective cpu usage 78.0 %
 2022-08-04 21:18:32 INFO  c.example.schedulingtasks.ScaleRule -  will change to cores ===> 4
-2022-08-04 21:18:32 INFO  com.example.schedulingtasks.ScaleSvc -  No need to run oci cli, exit!
+2022-08-04 21:18:32 INFO  ScaleSvc -  No need to run oci cli, exit!
 2022-08-04 21:19:11 INFO  c.e.s.SchedulingTasksApplication -  dbrun app is started=========
 2022-08-04 21:19:11 INFO  c.e.s.SchedulingTasksApplication -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 28768 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
 2022-08-04 21:19:11 INFO  c.e.s.SchedulingTasksApplication -  No active profile set, falling back to default profiles: default
@@ -462,4 +462,4 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2022-08-04 21:19:21 INFO  c.example.schedulingtasks.ScaleRule -  current: cores 4 
 2022-08-04 21:19:21 INFO  c.example.schedulingtasks.ScaleRule -  current: effective cpu usage 78.0 %
 2022-08-04 21:19:21 INFO  c.example.schedulingtasks.ScaleRule -  will change to cores ===> 4
-2022-08-04 21:19:21 INFO  com.example.schedulingtasks.ScaleSvc -  No need to run oci cli, exit!
+2022-08-04 21:19:21 INFO  ScaleSvc -  No need to run oci cli, exit!

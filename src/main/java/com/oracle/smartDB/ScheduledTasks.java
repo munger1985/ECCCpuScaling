@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jingsong.oracle.smart;
+package com.oracle.smartDB;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
