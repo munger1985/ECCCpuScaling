@@ -63,9 +63,11 @@ public class RunCmd {
             // 返回标准输出
             return resStringBuilder.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage() );
+
+
         }
-        return null;
+        return "did not run";
     }
 
 }

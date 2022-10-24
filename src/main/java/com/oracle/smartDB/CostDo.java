@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 //@Entity
+
+/**
+ * record cost for month
+ */
 @Entity
 public class CostDo {
     @Id

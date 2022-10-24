@@ -61,13 +61,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+
 		</dependency>
 
 
 	</dependencies>
 
 	<build>
-		<finalName>dbrun</finalName>
+		<finalName>solar</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

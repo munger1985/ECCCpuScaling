@@ -7,7 +7,8 @@ ld_5=`sar -q  1 1 |awk 'NR==5 {print $5}'`
 ld_15=`sar -q  1 1 |awk 'NR==5 {print $6}'`
 cores=`lscpu | awk '/^CPU\(s\)/ { print $2 }'`
 cpuUsage=`sar -u 1 1  |awk 'NR==5 {print $3+$5}'`
-clusterId="sasasas"
+clusterId="ocidsasasas"
+cpuCeiling=90
 curl --location --request POST 'http://localhost:8080/collect' \
 --header 'Content-Type: application/json' \
 --data-raw '{"vmId":"2",
@@ -30,5 +31,6 @@ curl --location --request POST 'http://172.16.9.243:8080/collect' \
 "qweight": '\"${qweight}\"',
 "mincore": '\"${mincore}\"',
 "maxcore": '\"${maxcore}\"',
+"cpuCeiling": '\"${cpuCeiling}\"',
 "cores": '\"${cores}\"'}'
 

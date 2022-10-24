@@ -23,13 +23,13 @@ public class ScaleSvc {
             log.error("This target core number is {} not an even!!! Exit ", targetC);
             return false;
         }
-        int cores;
+        int cores=0;
         CpuMetricModel c1 = Constant.metricModelHashMap.get(ocid+"=1");
         CpuMetricModel c2 = Constant.metricModelHashMap.get(ocid+"=2");
 
         if (c1 !=null && Integer.parseInt(c1.getCores()) !=0) {
             cores = Integer.parseInt(c1.getCores());
-        } else {
+        } else if (c2 !=null && Integer.parseInt(c2.getCores()) !=0){
             cores = Integer.parseInt(c2.getCores());
         }
 
@@ -39,7 +39,7 @@ public class ScaleSvc {
     }
 
     public void scaleCpu(String ocid_targetCores) {
-        log.info("enter scale!");
+        log.info("enter method scaleCpu!");
         String[] strarr = ocid_targetCores.split("=");
         String ocid=strarr[0];
         String targetCores = strarr[1];
@@ -54,23 +54,35 @@ public class ScaleSvc {
         runCmd.param[0] = ocid;
         runCmd.param[1]=targetCores;
         String result = runCmd.run();
-        log.info("command result : {} ", result);
-        if (result == null) {
-            log.info("Not a valid command, exit!");
+//        log.info("command result : {} ", result);
+        if (  "did not run".equals(result)) {
+            log.info("{} =》{} Exited, not a valid command or failed to run due to above cause ",ocid,targetCores);
+//            Constant.metricModelHashMap.remove(ocid+"=1");
+//            Constant.metricModelHashMap.remove(ocid+"=2");
             return;
         }
 
         if (result.contains("UPDATING") || result.contains("AVAILABLE")) {
             log.info(result);
             String clus = ocid.substring(ocid.length() - 4);
+            log.info("scale_success_log: {},{}",clus,targetCores);
+            log.info("model1: {},{}", ocid,  Constant.metricModelHashMap.get(ocid+"=1")  );
+            log.info("model2: {},{}", ocid,  Constant.metricModelHashMap.get(ocid+"=2")  );
 
             if (upOrDown(ocid,targetCores)) {
+
                 log.info("↑↑↑ {} scaled up to {} OCPU", clus,targetCores);
             } else {
                 log.info("↓↓↓ {} scaled down to {} OCPU",clus, targetCores);
             }
 
         }
+//        Constant.metricModelHashMap.clear();
+
+        Constant.metricModelHashMap.remove(ocid+"=1");
+        Constant.metricModelHashMap.remove(ocid+"=2");
+
+
 
     }
 
@@ -86,15 +98,9 @@ public class ScaleSvc {
         }
         int targetC = Integer.parseInt(targetCores);
 
-        Constant.metricModelHashMap.clear();
         return cores < targetC;
     }
 
-//    public static void main(String[] args) {
-//
-//        Double d = 123.3;
-//        System.out.println(d / 100);
-//    }
 
 
 }

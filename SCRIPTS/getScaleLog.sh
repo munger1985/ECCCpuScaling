@@ -1,1 +1,0 @@
-dbaascli cpuscale get_status

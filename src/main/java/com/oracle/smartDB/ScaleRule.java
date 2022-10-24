@@ -30,8 +30,6 @@ public class ScaleRule {
     //    Double q_weight;
 //    Integer minCores;
 //    Integer maxCores;
-    @Value("${RatioPerScale}")
-    Integer RatioPerScale;
     public PublishSubject<String> publishSubject = PublishSubject.create();
     private final Logger log = LoggerFactory.getLogger(ScaleRule.class);
 
@@ -39,9 +37,10 @@ public class ScaleRule {
     @PostConstruct
     public void setup() {
         //window(coolDown, TimeUnit.MINUTES)
+//        SerializedSubscriber
         publishSubject
                 .subscribe(x -> scaleSvc.scaleCpu(x), err ->
-                        {   log.error("rx received Error!");
+                        {   log.error("scaleCpu Method Error!");
                             err.printStackTrace();
                         });
     }
@@ -129,7 +128,6 @@ public class ScaleRule {
 //        CpuMetricModel cpuMetricModel1 = metricModelHashMap.get("1");
 //        CpuMetricModel cpuMetricModel2 = metricModelHashMap.get("2");
 
-        int minCores = Integer.parseInt(cpuMetricModel.getMincore());
         int maxCores = Integer.parseInt(cpuMetricModel.getMaxcore());
         double q_weight = Double.parseDouble(cpuMetricModel.getQweight());
 //        log.info("<============= node2 =============>");
@@ -144,6 +142,8 @@ public class ScaleRule {
         Integer ld_5 = toInt(cpuMetricModel.getLd_5());
         Integer ld_15 = toInt(cpuMetricModel.getLd_15());
         Integer cores = Integer.parseInt(cpuMetricModel.getCores());
+        Double cpuCeiling = Double.parseDouble(cpuMetricModel.getCpuCeiling());
+
         log.info("current: cores {} ", cores);
         log.info("current: effective cpu usage {} %", cpuUsage);
 
@@ -152,59 +152,58 @@ public class ScaleRule {
 //        Integer ld_5 = compareInteger (metricModelHashMap.get("1").ld_5,metricModelHashMap.get("2").ld_5);
 //        Integer ld_15 = compareInteger (metricModelHashMap.get("1").ld_15,metricModelHashMap.get("2").ld_15);
 //        Integer cores = compareInteger( metricModelHashMap.get("1").getCores() , metricModelHashMap.get("2").getCores());
-        if ((ld_5 > maxCores && cores.equals(maxCores)) || (ld_5 < minCores && cores.equals(minCores))) {
-            log.info("Out of the range of cpu core adjustment, Exit!");
-            return;
-        }
-
+//        if ((ld_5 > maxCores && cores.equals(maxCores)) || (ld_5 < minCores && cores.equals(minCores))) {
+//            log.info("Out of the range of cpu core adjustment, Exit!");
+//            return;
+//        }
+        Integer targetCores;
         if (cpuUsage > upTrigger) {
-            if (ld_15 * q_weight > cores || ld_1 > 2 * ld_15) {
-                if (ld_5 * q_weight > ld_15 * q_weight) {
-
-                    int i = Integer.parseInt(String.valueOf(ld_5));
-                    if (i % 2 != 0) {
-                        i = i + 1;
+            if(cpuUsage<cpuCeiling){
+                if (ld_15 * q_weight > cores || ld_1 > 2 * ld_15) {
+                    if (ld_5 * q_weight > ld_15 && ld_5*(1+q_weight/10)> cores) {
+                        targetCores = Math.toIntExact(Math.round(ld_5 * (1 + q_weight / 10)));
+                        capCoresAndSend(cpuMetricModel,targetCores);
                     }
-                    i = capCores(i, minCores, maxCores);
-                    log.info("will change to cores ===> {}", i);
-                    String str = cpuMetricModel.getClusterId() + "=" + i;
-                    publishSubject.onNext(str);
                 }
+            }else {
+                targetCores=maxCores;
+                capCoresAndSend(cpuMetricModel,targetCores);
             }
 
+
         }
-//        log.info("scaledown  cpuUsage  {}   ", cpuUsage);
-//        log.info("scaledown  cores  {}   ", cores);
 
         if (cpuUsage < downTrigger) {
-            if (ld_15 * q_weight < cores) {
-//                log.info("scaledown {} {} ", ld_5,ld_15);
-                if (ld_5 * q_weight < ld_15 * q_weight) {
-                    int i = Integer.parseInt(String.valueOf(ld_5));
-                    if (i % 2 != 0) {
-                        i = i + 1;
-                    }
-                    i = capCores(i, minCores, maxCores);
-
-                    log.info("will change to cores ===> {}", i);
-                    String str = cpuMetricModel.getClusterId() + "=" + i;
-                    publishSubject.onNext(str);
-
-                }
-
+            if (ld_5 *q_weight < cores && ld_15 *q_weight < cores) {
+//                       ld_5*(1+q_weight/10)
+                targetCores = Math.toIntExact(Math.round(ld_5 * (1 + q_weight / 10)));
+                capCoresAndSend(cpuMetricModel,targetCores);
             }
+
         }
 
-        clearClusterData(cpuMetricModel);
+    }
 
+    /**
+     * make cores even, and caps core amount
+     * @param cpuMetricModel
+     * @param targetCores
+     */
+    void capCoresAndSend(CpuMetricModel cpuMetricModel, Integer targetCores){
+        int minCores = Integer.parseInt(cpuMetricModel.getMincore());
+        int maxCores = Integer.parseInt(cpuMetricModel.getMaxcore());
+        String str;
+        if (targetCores % 2 != 0) {
+            targetCores = targetCores + 1;
+        }
+        targetCores = capCores(targetCores, minCores, maxCores);
+        log.info("will change to cores ===> {}", targetCores);
+        str = cpuMetricModel.getClusterId() + "=" + targetCores;
+        publishSubject.onNext(str);
 
     }
 
-    private void clearClusterData(CpuMetricModel cpuMetricModel) {
-        Constant.metricModelHashMap.remove(cpuMetricModel.getClusterId()+"=1");
-        Constant.metricModelHashMap.remove(cpuMetricModel.getClusterId()+"=2");
 
-    }
 //    /**
 //     * @deprecated
 //     */

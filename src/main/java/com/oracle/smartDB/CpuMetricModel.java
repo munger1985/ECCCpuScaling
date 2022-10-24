@@ -13,8 +13,17 @@ class CpuMetricModel {
     String cores;
     String clusterId;
     String qweight;
+    String cpuCeiling;
 
     String mincore;
+
+    public String getCpuCeiling() {
+        return cpuCeiling;
+    }
+
+    public void setCpuCeiling(String cpuCeiling) {
+        this.cpuCeiling = cpuCeiling;
+    }
 
     String maxcore;
 
