@@ -158,28 +158,6 @@ public class DataFilter {
         } else return "1";
     }
 
-    public static void main(String[] args) throws InterruptedException {
-
-        HashMap<Integer, Integer> ll = new HashMap<>();
-        ll.put(1, 1);
-        ll.remove(1);
-        Integer i =ll.get(1);
-        System.out.println(1);
-//        TimeOutTask timeOutTask = new TimeOutTask(timer);
-//
-//        timer.schedule(timeOutTask, 3 * 1000, 1000);
-//        timer.cancel();
-//        while (true){
-//            System.out.println(timeOutTask.timer);
-//            Thread.sleep(3333);
-//        }
-
-//        new DataFilter().getCpuUsage();
-
-//        System.out.println(dd);
-
-    }
-
 
 }
 
