@@ -63,7 +63,7 @@ public class EmailService {
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setFrom(from);
-        message.setTo("jade.shi@oracle.com");
+        message.setTo("jingsong.liu@oracle.com");
         message.setSubject(subject);
         message.setText(text);
 
