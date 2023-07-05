@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class RunCmd {
-    private static final Logger log = LoggerFactory.getLogger(RunCmd.class);
+public class DbApi {
+    private static final Logger log = LoggerFactory.getLogger(DbApi.class);
 
     String cmd = "date";
     Process p = null;
     String[] param =new String[3];
 
-    public RunCmd(String cmd) {
+    public DbApi(String cmd) {
         this.cmd = cmd;
     }
 

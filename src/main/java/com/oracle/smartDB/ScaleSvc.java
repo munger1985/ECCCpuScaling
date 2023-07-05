@@ -66,8 +66,8 @@ public class ScaleSvc {
             log.info(result);
             String clus = ocid.substring(ocid.length() - 4);
             log.info("scale_success_log: {},{}",clus,targetCores);
-            log.info("model1: {},{}", ocid,  Constant.metricModelHashMap.get(ocid+"=1")  );
-            log.info("model2: {},{}", ocid,  Constant.metricModelHashMap.get(ocid+"=2")  );
+//            log.info("model1: {},{}", ocid,  Constant.metricModelHashMap.get(ocid+"=1")  );
+//            log.info("model2: {},{}", ocid,  Constant.metricModelHashMap.get(ocid+"=2")  );
 
             if (upOrDown(ocid,targetCores)) {
 
