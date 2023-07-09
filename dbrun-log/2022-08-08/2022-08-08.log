@@ -1,9 +1,0 @@
-2022-08-08 18:41:34 INFO  c.e.s.SchedulingTasksApplication -  dbrun app is started=========
-2022-08-08 18:41:35 INFO  c.e.s.SchedulingTasksApplication -  Starting SchedulingTasksApplication using Java 17.0.1 on JINGSLIU-CN with PID 25320 (C:\Users\jingsliu\Desktop\work\zrkjecc\complete\target\classes started by jingsliu in C:\Users\jingsliu\Desktop\work\zrkjecc\complete)
-2022-08-08 18:41:35 INFO  c.e.s.SchedulingTasksApplication -  No active profile set, falling back to default profiles: default
-2022-08-08 18:41:36 INFO  o.a.coyote.http11.Http11NioProtocol -  Initializing ProtocolHandler ["http-nio-8080"]
-2022-08-08 18:41:36 INFO  o.a.catalina.core.StandardService -  Starting service [Tomcat]
-2022-08-08 18:41:36 INFO  o.a.catalina.core.StandardEngine -  Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-08-08 18:41:36 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -  Initializing Spring embedded WebApplicationContext
-2022-08-08 18:41:36 INFO  o.a.coyote.http11.Http11NioProtocol -  Starting ProtocolHandler ["http-nio-8080"]
-2022-08-08 18:41:36 INFO  c.e.s.SchedulingTasksApplication -  Started SchedulingTasksApplication in 2.139 seconds (JVM running for 2.757)
