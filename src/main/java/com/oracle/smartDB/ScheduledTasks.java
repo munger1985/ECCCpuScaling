@@ -16,14 +16,12 @@
 
 package com.oracle.smartDB;
 
-import com.oracle.smartDB.mail.EmailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import javax.mail.MessagingException;
 import java.text.SimpleDateFormat;
 
 @Component
@@ -35,11 +33,10 @@ public class ScheduledTasks {
 	ScaleRule scaleRule;
 	@Resource
 	ScaleSvc scaleSvc;
-	@Resource
-	EmailService emailService;
+
 
 	@Scheduled(fixedRateString = "${checkRate}")
-	public void triggerCpuScaleRule() throws MessagingException {
+	public void triggerCpuScaleRule()  {
 
 //		emailService.sendMail("123","12312");
 

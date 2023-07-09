@@ -2,10 +2,10 @@ package com.oracle.smartDB;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ public class DataFilter {
      * clusterId: timer
      */
     Map<String, Boolean> switchMap = Collections.synchronizedMap(new HashMap<>());
-    @Resource
+    @Autowired
     ScaleRule scaleRule;
 
     @Value("${datafilter_interval}")
@@ -45,7 +45,7 @@ public class DataFilter {
     }
 
     private boolean CheckAndPrintNodeInfo(CpuMetricModel cpuMetricModel) {
-        log.info("===>>)) got a new metric"  );
+        log.info("===>>>))) got a new metric"  );
         log.info("clusterId: {}",cpuMetricModel.getClusterId());
         log.info("<============= node {} =============>", cpuMetricModel.getVmId());
         log.info("  ld_1 {}", cpuMetricModel.getLd_1());

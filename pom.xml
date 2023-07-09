@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.3</version>
+		<version>3.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -15,15 +15,36 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+<!--		<java.version>1.8</java.version>-->
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.oracle.oci.sdk</groupId>
+				<artifactId>oci-java-sdk-bom</artifactId>
+				<!-- replace the version below with your required version -->
+				<version>3.18.0</version>
 
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.oracle.oci.sdk</groupId>
+				<artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
+				<version>3.18.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>io.reactivex.rxjava3</groupId>
 			<artifactId>rxjava</artifactId>
@@ -52,7 +73,6 @@
 
 
 
-
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -61,7 +81,83 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 
+
+		<dependency>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+
+		<!--oci sdk-->
+
+
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.jodah</groupId>
+			<artifactId>failsafe</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.connectors</groupId>
+			<artifactId>jersey-apache-connector</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Note: replace this with a different logging backend if desired -->
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.oci.sdk</groupId>
+			<artifactId>oci-java-sdk-circuitbreaker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.oci.sdk</groupId>
+			<artifactId>oci-java-sdk-common</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.oracle.oci.sdk</groupId>
+			<artifactId>oci-java-sdk-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.oracle.oci.sdk</groupId>
+			<artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.oracle.oci.sdk</groupId>
+			<artifactId>oci-java-sdk-addons-apache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.oci.sdk</groupId>
+			<artifactId>oci-java-sdk-addons-resteasy-client-configurator</artifactId>
+		</dependency>
+<!--database-->
+
+		<dependency>
+			<groupId>com.oracle.oci.sdk</groupId>
+			<artifactId>oci-java-sdk-database</artifactId>
 		</dependency>
 
 
