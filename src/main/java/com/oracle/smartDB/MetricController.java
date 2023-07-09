@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,7 +20,7 @@ import java.util.concurrent.Executors;
 
 @RestController
 public class MetricController {
-    @Resource
+    @Autowired
     DataFilter dataFilter;
     @Value("${budget}")
     String budget;
